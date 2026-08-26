@@ -18,6 +18,10 @@ import {
   SiNodedotjs,
   SiRedis,
   SiLangchain,
+  SiNeo4J,
+  SiMongodb,
+  SiPostgresql,
+  SiGooglecloud,
 } from 'react-icons/si'
 import { FaAws } from 'react-icons/fa'
 import type { IconType } from 'react-icons'
@@ -43,6 +47,10 @@ const stack: { name: string; Icon: IconType }[] = [
   { name: 'TypeScript', Icon: SiTypescript },
   { name: 'JavaScript', Icon: SiJavascript },
   { name: 'Node.js', Icon: SiNodedotjs },
+  { name: 'Neo4j', Icon: SiNeo4J },
+  { name: 'MongoDB', Icon: SiMongodb },
+  { name: 'PostgreSQL', Icon: SiPostgresql },
+  { name: 'Google Cloud', Icon: SiGooglecloud },
 ]
 
 function Row({ reverse = false }: { reverse?: boolean }) {

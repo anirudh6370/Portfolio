@@ -1,8 +1,18 @@
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { developers } from '../data/developers'
+import { domains } from '../data/domains'
 
-const rotatingWords = ['Agentic AI', 'RAG Systems', 'Graph Analytics', 'Full-Stack Products', 'Computer Vision']
+const rotatingWords = [
+  'Agentic AI',
+  'RAG Systems',
+  'LLM Fine-Tuning',
+  'Graph Analytics',
+  'Full-Stack Products',
+  'Computer Vision',
+]
+
+const maxYearsExperience = Math.max(...developers.map((d) => d.yearsExperience))
 
 export default function Hero() {
   const [index, setIndex] = useState(0)
@@ -89,8 +99,8 @@ export default function Hero() {
           className="mt-20 grid grid-cols-3 gap-8 max-w-xl border-t border-white/10 pt-8"
         >
           <Stat value={`${developers.length}`} label="Engineers" />
-          <Stat value="2.5+" label="Years, lead engineer" />
-          <Stat value="6" label="Core domains" />
+          <Stat value={`${maxYearsExperience}+`} label="Years, senior engineer" />
+          <Stat value={`${domains.length}`} label="Core domains" />
         </motion.div>
       </div>
     </section>

@@ -9,7 +9,7 @@ export default function DomainsSection() {
         <SectionHeading
           eyebrow="What We Do"
           title="Deep expertise, not a generic dev-shop menu."
-          description="Six domains where the collective consistently ships production-grade work."
+          description={`${domains.length} domains where the collective consistently ships production-grade work.`}
         />
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
