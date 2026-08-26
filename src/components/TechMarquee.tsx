@@ -48,7 +48,9 @@ const stack: { name: string; Icon: IconType }[] = [
 function Row({ reverse = false }: { reverse?: boolean }) {
   return (
     <div className="flex w-max">
-      <div className={`flex shrink-0 items-center gap-10 pr-10 ${reverse ? 'animate-marquee-reverse' : 'animate-marquee'}`}>
+      <div
+        className={`flex shrink-0 items-center gap-10 pr-10 will-change-transform ${reverse ? 'animate-marquee-reverse' : 'animate-marquee'}`}
+      >
         {[...stack, ...stack].map((s, i) => (
           <div key={s.name + i} className="flex items-center gap-2.5 text-white/40 hover:text-white/80 transition-colors">
             <s.Icon className="h-5 w-5" />

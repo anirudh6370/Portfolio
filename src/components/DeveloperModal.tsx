@@ -37,7 +37,7 @@ export default function DeveloperModal({ dev, onClose }: { dev: Developer | null
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.98 }}
             transition={{ duration: 0.35, ease: 'easeOut' }}
-            className="relative z-10 my-8 w-full max-w-3xl rounded-3xl glass bg-ink-900/95 p-8 sm:p-10"
+            className="relative z-10 my-8 w-full max-w-3xl rounded-3xl glass-blur bg-ink-900/95 p-8 sm:p-10"
           >
             <button
               onClick={onClose}

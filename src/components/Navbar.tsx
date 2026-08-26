@@ -12,8 +12,16 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12)
-    window.addEventListener('scroll', onScroll)
+    let ticking = false
+    const onScroll = () => {
+      if (ticking) return
+      ticking = true
+      requestAnimationFrame(() => {
+        setScrolled(window.scrollY > 12)
+        ticking = false
+      })
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
@@ -29,7 +37,7 @@ export default function Navbar() {
       <div className="mx-auto max-w-6xl px-6">
         <div
           className={`flex items-center justify-between rounded-2xl px-5 py-3 transition-all duration-300 ${
-            scrolled ? 'glass shadow-lg shadow-black/20' : ''
+            scrolled ? 'glass-blur shadow-lg shadow-black/20' : ''
           }`}
         >
           <a href="#top" className="flex items-center gap-2 font-display text-lg font-semibold tracking-tight">
