@@ -432,4 +432,105 @@ export const developers: Developer[] = [
       resume: '/resumes/iftesha-najnin-resume.pdf',
     },
   },
+  {
+    id: 'aditya-tambe',
+    name: 'Aditya Tambe',
+    role: 'Senior Data Scientist',
+    tagline: 'GenAI systems that modernize clinical-trial data pipelines and quantify pharma marketing ROI.',
+    location: 'Pune, India',
+    yearsExperience: 7,
+    avatarInitials: 'AT',
+    domains: ['Enterprise AI Automation', 'Pharma & Healthcare AI', 'Agentic AI & Automation', 'Marketing Analytics'],
+    topSkills: ['LangGraph', 'LangChain', 'PySpark', 'Databricks', 'RAG', 'XGBoost'],
+    skillGroups: [
+      {
+        category: 'GenAI & Agents',
+        skills: ['LangChain', 'LangGraph', 'LangSmith', 'LangServe', 'RAG', 'Prompt Engineering', 'Fine-Tuning', 'Vector Databases', 'OpenAI & Anthropic APIs', 'Ollama', 'Hugging Face'],
+      },
+      {
+        category: 'Machine Learning',
+        skills: ['Predictive Modeling', 'Time-Series Forecasting', 'Classification & Regression', 'XGBoost', 'Random Forest', 'Marketing Mix Modeling', 'NER'],
+      },
+      {
+        category: 'Programming',
+        skills: ['Python', 'PySpark', 'SQL', 'Pandas', 'NumPy', 'Scikit-learn', 'Web Scraping (BeautifulSoup, Selenium)'],
+      },
+      {
+        category: 'Cloud & Platforms',
+        skills: ['Databricks', 'AWS', 'Docker', 'Git'],
+      },
+      {
+        category: 'Full-Stack',
+        skills: ['Flask', 'FastAPI', 'Streamlit', 'React', 'Power BI'],
+      },
+    ],
+    experience: [
+      {
+        role: 'Senior Programmer, Data Science',
+        company: 'IQVIA',
+        period: 'Mar 2025 – Present',
+        highlights: [
+          'Built a multi-agent GenAI system analyzing legacy SAS code to generate Databricks PySpark equivalents, with automated code review and validation for clinical-trial reporting across DM, AE, CM, Labs, and Vitals domains.',
+          'Built an automated SAS-to-PySpark parity agent validating schemas, record counts, nulls, derived variables, and aggregates against legacy outputs, with a feedback-driven self-correction loop that improved migration accuracy.',
+          'Built and deployed an execution-monitoring web app on Databricks with role-based access control and an LLM-powered failure-diagnostics chatbot for root-cause Q&A on failed pipeline jobs.',
+        ],
+      },
+      {
+        role: 'Senior Associate, Data Science',
+        company: 'Axtria',
+        period: 'Jun 2023 – Feb 2025',
+        highlights: [
+          'Built Marketing Mix Models (Ridge/Elastic Net) quantifying the incremental impact of pharma promotional channels on prescription uptake, with adstock/saturation features and budget-allocation scenario planning.',
+          'Built an XGBoost model forecasting 6-month patient enrollment across ~8,000 clinical-trial site-records from 90+ studies, cutting forecast error (MAE) by 25% over the incumbent planning approach.',
+        ],
+      },
+      {
+        role: 'Associate Consultant',
+        company: 'ZS Associates',
+        period: 'Nov 2020 – May 2023',
+        highlights: [
+          'Designed a 340B program data framework on Databricks/PySpark unifying retail and non-retail datasets into a single source of truth; built a web-scraping pipeline for HCP verification from hospital sites and the NPPES registry.',
+          'Trained an NER model to extract HCP names, degrees, and addresses from unstructured text, applying fuzzy matching to resolve HCP-HCO affiliations and automate recurring manual reporting.',
+          'Led offshore delivery for a 30+ source-system analytics rollout and cloud migration, coordinating 15+ stakeholders across vendors and internal teams.',
+        ],
+      },
+      {
+        role: 'Data Analyst Intern',
+        company: 'Divgi-TTS',
+        period: 'Jun 2019 – May 2020',
+        highlights: [
+          'Performed data analytics and statistical hypothesis testing in Python to support data-driven decision-making across automotive manufacturing workflows.',
+        ],
+      },
+    ],
+    projects: [
+      {
+        name: 'GenAI SAS-to-PySpark Migration',
+        stack: 'LangGraph · Databricks · PySpark',
+        description: 'Multi-agent system that migrates legacy SAS clinical-trial code to PySpark, with automated parity validation against legacy outputs.',
+      },
+      {
+        name: 'Pharma Marketing Mix Modeling',
+        stack: 'Ridge / Elastic Net · Adstock Modeling',
+        description: 'Quantifies the ROI of pharma promotional channels and supports budget-allocation scenario planning for brand teams.',
+      },
+      {
+        name: 'Clinical Trial Enrollment Forecasting',
+        stack: 'XGBoost · Time-Aware Validation',
+        description: 'Forecasts 6-month patient enrollment across thousands of clinical-trial sites, cutting forecast error by 25%.',
+      },
+    ],
+    education: 'M.Tech in Project Management, College of Engineering Pune — CGPA 9.3/10 (2020); B.E. in Mechanical Engineering, Savitribai Phule Pune University (2017)',
+    recognition: [
+      'BRAVO Award (Q4 2023), Axtria — impact delivery on a strategic data science engagement',
+      'In-Genius Award (2022), ZS Associates — for an Excel-based planning tool',
+      'Project Champion & PMEC Excellence Award (2021), ZS Associates',
+      'Databricks Accredited Generative AI Fundamentals; Databricks LLMs — Application through Production',
+    ],
+    links: {
+      email: 'aditambe3@gmail.com',
+      linkedin: 'https://linkedin.com/in/adityatambe',
+      resume: '/resumes/aditya-tambe-resume.pdf',
+    },
+  },
 ]

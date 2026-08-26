@@ -24,6 +24,8 @@ import {
   SiGooglecloud,
   SiDatabricks,
   SiGradio,
+  SiApachespark,
+  SiScikitlearn,
 } from 'react-icons/si'
 import { FaAws } from 'react-icons/fa'
 import type { IconType } from 'react-icons'
@@ -55,6 +57,8 @@ const stack: { name: string; Icon: IconType }[] = [
   { name: 'Google Cloud', Icon: SiGooglecloud },
   { name: 'Databricks', Icon: SiDatabricks },
   { name: 'Gradio', Icon: SiGradio },
+  { name: 'Apache Spark', Icon: SiApachespark },
+  { name: 'Scikit-learn', Icon: SiScikitlearn },
 ]
 
 function Row({ reverse = false }: { reverse?: boolean }) {

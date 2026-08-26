@@ -41,6 +41,11 @@ export const domains: Domain[] = [
     tags: ['RAG Chatbots', 'Credit Scoring', 'LangChain'],
   },
   {
+    title: 'Pharma & Healthcare AI',
+    description: 'Clinical-trial data pipelines and marketing analytics for pharma — from GenAI-driven legacy code migration to enrollment forecasting and ROI modeling.',
+    tags: ['Databricks', 'PySpark', 'Marketing Mix Modeling'],
+  },
+  {
     title: 'Document Intelligence',
     description: 'Turning unstructured documents into structured, actionable data with LLM-driven extraction and dynamic templating.',
     tags: ['Aspose', 'Prompt Engineering', 'OCR'],
