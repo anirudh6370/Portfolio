@@ -7,6 +7,7 @@ const rotatingWords = [
   'Agentic AI',
   'RAG Systems',
   'LLM Fine-Tuning',
+  'Fintech AI',
   'Graph Analytics',
   'Full-Stack Products',
   'Computer Vision',

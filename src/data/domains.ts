@@ -13,7 +13,7 @@ export const domains: Domain[] = [
   {
     title: 'RAG & Vector Search',
     description: 'Retrieval-augmented generation grounded in your own data, using embedding search over vector DBs at production scale.',
-    tags: ['OpenSearch', 'FAISS', 'ChromaDB'],
+    tags: ['OpenSearch', 'FAISS', 'ChromaDB', 'Pinecone'],
   },
   {
     title: 'Graph Analytics',
@@ -34,6 +34,11 @@ export const domains: Domain[] = [
     title: 'AI Security & Threat Intelligence',
     description: 'Agentic threat detection over petabyte-scale security logs, built on cloud-native data pipelines for enterprise security teams.',
     tags: ['AWS Bedrock', 'Threat Hunting', 'LangGraph'],
+  },
+  {
+    title: 'Fintech & Lending AI',
+    description: 'RAG-based financial assistants and predictive models that qualify leads, assess eligibility, and drive loan conversion — built for real regulatory and data constraints.',
+    tags: ['RAG Chatbots', 'Credit Scoring', 'LangChain'],
   },
   {
     title: 'Document Intelligence',

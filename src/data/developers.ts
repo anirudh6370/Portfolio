@@ -134,7 +134,7 @@ export const developers: Developer[] = [
     tagline: 'Agentic GenAI systems — from enterprise code migration to LLM fine-tuning on low-resource languages.',
     location: 'Bhubaneswar, Odisha',
     yearsExperience: 3,
-    avatarInitials: 'SS',
+    avatarInitials: 'SM',
     domains: ['Agentic AI & Automation', 'LLM Fine-Tuning', 'AI Security', 'Low-Resource NLP'],
     topSkills: ['LangGraph', 'Multi-Agent Systems', 'AWS Bedrock', 'LoRA Fine-Tuning', 'RAG', 'MCP'],
     skillGroups: [
@@ -229,6 +229,106 @@ export const developers: Developer[] = [
       email: 'skshahid4467@gmail.com',
       github: 'https://github.com/Sk4467',
       resume: '/resumes/sk-md-shahid-resume.pdf',
+    },
+  },
+  {
+    id: 'swapnil-salgar',
+    name: 'Swapnil Salgar',
+    role: 'Senior Data Scientist',
+    tagline: 'Agentic AI that modernizes legacy enterprise code and powers fintech decisioning at scale.',
+    location: 'Pune, India',
+    yearsExperience: 6,
+    avatarInitials: 'SS',
+    domains: ['Agentic AI & Automation', 'LLM Fine-Tuning', 'Fintech AI', 'Enterprise Code Migration'],
+    topSkills: ['LangGraph', 'LangChain', 'RAG', 'LoRA / QLoRA', 'FastAPI', 'NetworkX'],
+    skillGroups: [
+      {
+        category: 'GenAI & Agents',
+        skills: ['LangChain', 'LangGraph', 'Multi-Agent Workflows', 'Tool-Calling', 'Memory & State Management', 'RAG', 'Prompt Engineering', 'LoRA / QLoRA Fine-Tuning', 'GANs', 'VAEs', 'Diffusion Models'],
+      },
+      {
+        category: 'LLMs & NLP',
+        skills: ['OpenAI GPT', 'Llama', 'BERT', 'Mistral', 'Anthropic', 'Hugging Face Transformers', 'Text Classification', 'NER', 'Summarization', 'Q&A'],
+      },
+      {
+        category: 'AI / ML',
+        skills: ['Logistic Regression', 'Random Forest', 'XGBoost', 'SVM', 'CNNs', 'LSTMs', 'Siamese Networks', 'TensorFlow', 'Keras', 'OpenCV'],
+      },
+      {
+        category: 'Vector & Knowledge Systems',
+        skills: ['Pinecone', 'FAISS', 'ChromaDB', 'LlamaIndex', 'Retrieval Pipelines'],
+      },
+      {
+        category: 'Cloud & MLOps',
+        skills: ['Databricks', 'Model Deployment', 'Data Pipelines', 'Monitoring'],
+      },
+      {
+        category: 'Full-Stack',
+        skills: ['Python', 'SQL', 'FastAPI', 'Flask', 'REST APIs', 'Streamlit', 'Gradio'],
+      },
+    ],
+    experience: [
+      {
+        role: 'Senior Data Scientist',
+        company: 'Brillio Technologies',
+        period: 'May 2025 – Present',
+        highlights: [
+          'Architected an AI-driven code conversion system cutting manual effort by 60–70% for legacy SAS ETL migration to Python/PySpark, using token-aware chunking for LLM-based semantic translation within API limits.',
+          'Built a custom SAS parser producing structured AST representations for complex constructs (macros, PROC SQL), plus a LangGraph multi-agent system for script analysis, conversion, validation, and documentation.',
+          'Built a dependency-resolution engine with NetworkX for execution order and dataset lineage, and automated Mermaid-diagram pipelines visualizing process flow — scaling modernization for Fortune clients while cutting costs.',
+          'Built an AI-powered R Shiny application analyzer to parse and document large, interdependent R codebases (ui.R, server.R, helper modules).',
+        ],
+      },
+      {
+        role: 'Senior Data Scientist',
+        company: 'Bajaj Finance Limited',
+        period: 'Jun 2022 – May 2025',
+        highlights: [
+          'Designed AI/ML solutions to boost home loan engagement and conversion, including decile-scoring predictive models for marketing.',
+          'Built "Smart Financial Assistant", a RAG-based chatbot for tailored loan recommendations and instant eligibility assessments, integrating OpenAI and LangChain into production data pipelines.',
+          'Partnered with business teams to prioritize leads and lift loan conversions through predictive-analytics-driven targeting.',
+        ],
+      },
+      {
+        role: 'Data Analyst (Process Engineer)',
+        company: 'Thermax Ltd',
+        period: 'Jul 2021 – Mar 2022',
+        highlights: [
+          'Forecasted daily fuel consumption for industrial boilers with regression models on steam load, weather, and efficiency data, optimizing procurement and planning accuracy.',
+        ],
+      },
+      {
+        role: 'Jr. Data Scientist',
+        company: 'Infinite Tech Solutions Pvt Ltd',
+        period: 'Jan 2020 – Jul 2021',
+        highlights: [
+          'Built an RFM-based customer segmentation pipeline with K-Means clustering (Elbow Method, Silhouette Score), lifting campaign ROI and retention by over 20%.',
+          'Developed a custom Siamese Neural Network for automated signature verification, strengthening fraud detection.',
+        ],
+      },
+    ],
+    projects: [
+      {
+        name: 'AI-Driven Code Conversion System',
+        stack: 'LangGraph · NetworkX · AST Parsing · PySpark',
+        description: 'Multi-agent pipeline that migrates legacy SAS ETL scripts to Python/PySpark, cutting manual migration effort by 60–70%.',
+      },
+      {
+        name: 'Smart Financial Assistant',
+        stack: 'RAG · LangChain · OpenAI',
+        description: 'RAG-based chatbot delivering tailored home-loan recommendations and instant eligibility assessments.',
+      },
+      {
+        name: 'Signature Verification',
+        stack: 'Siamese Networks · Data Augmentation',
+        description: 'Custom Siamese neural network for automated signature verification to strengthen fraud detection.',
+      },
+    ],
+    education: 'MBA (IT), BAMU University (2021–2024); M.Tech in Thermal Engineering, VJTI Mumbai (2018–2020); B.E. in Mechanical Engineering, Solapur University (2012–2016)',
+    links: {
+      email: 'swapnilsalgar77@gmail.com',
+      linkedin: 'https://linkedin.com/in/swapnil-salgar-749688112',
+      resume: '/resumes/swapnil-salgar-resume.pdf',
     },
   },
 ]

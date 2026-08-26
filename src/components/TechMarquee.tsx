@@ -22,6 +22,8 @@ import {
   SiMongodb,
   SiPostgresql,
   SiGooglecloud,
+  SiDatabricks,
+  SiGradio,
 } from 'react-icons/si'
 import { FaAws } from 'react-icons/fa'
 import type { IconType } from 'react-icons'
@@ -51,6 +53,8 @@ const stack: { name: string; Icon: IconType }[] = [
   { name: 'MongoDB', Icon: SiMongodb },
   { name: 'PostgreSQL', Icon: SiPostgresql },
   { name: 'Google Cloud', Icon: SiGooglecloud },
+  { name: 'Databricks', Icon: SiDatabricks },
+  { name: 'Gradio', Icon: SiGradio },
 ]
 
 function Row({ reverse = false }: { reverse?: boolean }) {

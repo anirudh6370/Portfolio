@@ -17,7 +17,7 @@ export default function DomainsSection() {
             <Reveal key={d.title} delay={(i % 3) * 0.08}>
               <div className="group relative h-full rounded-3xl glass glass-hover p-7 overflow-hidden">
                 <div className="absolute -bottom-10 -right-10 h-32 w-32 rounded-full bg-gradient-to-br from-cyan-500/20 to-transparent blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <span className="font-mono text-xs text-white/30">0{i + 1}</span>
+                <span className="font-mono text-xs text-white/30">{String(i + 1).padStart(2, '0')}</span>
                 <h3 className="relative mt-3 font-display text-lg font-semibold">{d.title}</h3>
                 <p className="relative mt-3 text-sm leading-relaxed text-white/60">{d.description}</p>
                 <div className="relative mt-5 flex flex-wrap gap-2">
