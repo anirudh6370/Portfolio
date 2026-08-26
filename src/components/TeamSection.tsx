@@ -19,12 +19,12 @@ export default function TeamSection() {
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {developers.map((dev, i) => (
-            <Reveal key={dev.id} delay={i * 0.08}>
+            <Reveal key={dev.id} delay={i * 0.08} className="h-full">
               <DeveloperCard dev={dev} onOpen={() => setActive(dev)} />
             </Reveal>
           ))}
 
-          <Reveal delay={developers.length * 0.08}>
+          <Reveal delay={developers.length * 0.08} className="h-full">
             <div className="flex h-full min-h-[280px] flex-col items-center justify-center rounded-3xl border border-dashed border-white/15 p-7 text-center text-white/40">
               <span className="font-display text-2xl">+</span>
               <p className="mt-2 text-sm">More engineers joining the collective soon</p>

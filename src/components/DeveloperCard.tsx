@@ -35,7 +35,7 @@ export default function DeveloperCard({
       onMouseMove={handleMouseMove}
       onMouseLeave={handleLeave}
       style={{ rotateX, rotateY, transformPerspective: 800 }}
-      className="group relative w-full text-left rounded-3xl glass glass-hover p-7 overflow-hidden"
+      className="group relative flex h-full w-full flex-col text-left rounded-3xl glass glass-hover p-7 overflow-hidden"
     >
       <div className="absolute -top-16 -right-16 h-40 w-40 rounded-full bg-gradient-to-br from-violet-500/30 to-cyan-500/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
@@ -50,7 +50,7 @@ export default function DeveloperCard({
 
       <h3 className="relative mt-6 font-display text-xl font-semibold">{dev.name}</h3>
       <p className="relative text-sm text-cyan-400">{dev.role}</p>
-      <p className="relative mt-3 text-sm text-white/60 leading-relaxed">{dev.tagline}</p>
+      <p className="relative mt-3 text-sm text-white/60 leading-relaxed line-clamp-3">{dev.tagline}</p>
 
       <div className="relative mt-5 flex flex-wrap gap-2">
         {dev.topSkills.slice(0, 4).map((s) => (
@@ -60,7 +60,7 @@ export default function DeveloperCard({
         ))}
       </div>
 
-      <div className="relative mt-6 flex items-center gap-1.5 text-sm font-medium text-white/80">
+      <div className="relative mt-auto flex items-center gap-1.5 pt-6 text-sm font-medium text-white/80">
         View profile
         <svg viewBox="0 0 24 24" className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none">
           <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

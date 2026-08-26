@@ -331,4 +331,105 @@ export const developers: Developer[] = [
       resume: '/resumes/swapnil-salgar-resume.pdf',
     },
   },
+  {
+    id: 'iftesha-najnin',
+    name: 'Iftesha Najnin',
+    role: 'Sr. AI Engineer',
+    tagline: 'Enterprise agentic AI platforms — scaled to 500K+ agent executions a month.',
+    location: 'Bangalore, India',
+    yearsExperience: 6,
+    avatarInitials: 'IN',
+    domains: ['Agentic AI & Automation', 'Enterprise AI Automation', 'LLM Fine-Tuning', 'Computational Biology'],
+    topSkills: ['LangGraph', 'LangChain', 'Multi-Agent Systems', 'Azure OpenAI', 'RAG', 'Prompt Engineering'],
+    skillGroups: [
+      {
+        category: 'GenAI & Agents',
+        skills: ['LangChain', 'LangGraph', 'Multi-Agent Systems', 'RAG', 'Prompt Engineering', 'Chain-of-Thought', 'Azure OpenAI', 'Azure AI Foundry'],
+      },
+      {
+        category: 'AI / ML',
+        skills: ['TensorFlow', 'PyTorch', 'Hugging Face Transformers', 'Time Series Analysis', 'LoRA Fine-Tuning', 'NLP', 'Deep Learning'],
+      },
+      {
+        category: 'Computational Biology',
+        skills: ['Scanpy', 'Anndata', 'GeneFormer', 'scRNA-seq Analysis', 'Weights & Biases'],
+      },
+      {
+        category: 'Cloud & DevOps',
+        skills: ['Azure', 'Azure Container Apps', 'Docker', 'Git', 'CI/CD'],
+      },
+      {
+        category: 'Full-Stack',
+        skills: ['Python', 'R', 'SQL', 'FastAPI', 'Streamlit', 'Gradio', 'Chainlit'],
+      },
+    ],
+    experience: [
+      {
+        role: 'Sr. AI Researcher / Engineer',
+        company: 'Blue Yonder',
+        period: 'May 2025 – Present',
+        highlights: [
+          'Co-invented AgentSmith, a low-code/no-code enterprise multi-agent platform that reached the Crystal Ball Innovation Finals and shipped into the Blue Yonder Agent Marketplace, supporting 500K+ agent executions/month while cutting custom development effort by ~50%.',
+          'Led development of "Smart Builder", enabling natural-language-driven agent creation, instruction generation, and tool recommendation, plus the backend APIs and orchestration for agent lifecycle management.',
+          'Led technical design for the TAM Persona Agent, a strategic Microsoft co-build — architecting multi-agent orchestration, memory, context management, and persona-driven agent design, and delivering enterprise agents (Upgrade Analyzer, Lead Analyzer, Escalation Assist) using RAG and semantic search over enterprise data.',
+        ],
+      },
+      {
+        role: 'Sr. AI Researcher',
+        company: 'Odia Generative AI',
+        period: 'Feb 2026 – Present',
+        highlights: [
+          'Building an Odia AI ecosystem — datasets, OCR evaluation, and model benchmarking for a low-resource Indic language.',
+          'Created and open-sourced one of the first Odia OCR benchmark datasets, and fine-tuned Qwen2.5-VL with LoRA for high-accuracy Odia OCR.',
+          'Developed "Indic OCR Eval", introducing GER, CAGER, and Indic-aware OCR evaluation metrics; released datasets, models, and tools on Hugging Face.',
+        ],
+      },
+      {
+        role: 'Full Stack Data Scientist',
+        company: 'Aganitha Cognitive Solutions',
+        period: 'Feb 2023 – May 2025',
+        highlights: [
+          'Built a conversational ReAct agent letting biologists run scRNA-seq analyses in natural language with live tool/database integration; extended it into a multi-agent framework with a response-caching layer, instrumented with LangSmith.',
+          'Built an LSTM-based time-series model for antibody titer prediction reaching 94% accuracy, deployed as an interactive Streamlit application.',
+          'Fine-tuned GeneFormer, a BERT-based single-cell genomics foundation model, applying in-silico perturbation and classification techniques for gene-level insights.',
+        ],
+      },
+      {
+        role: 'Subject Matter Lead (Math & Physics)',
+        company: 'HW Saver LLP',
+        period: 'Oct 2019 – Apr 2022',
+        highlights: [
+          'Built deep expertise in mathematical modeling and analytical problem-solving, later applied to algorithm design and data-driven decision-making as a data scientist.',
+        ],
+      },
+    ],
+    projects: [
+      {
+        name: 'AgentSmith',
+        stack: 'LangGraph · Azure OpenAI · FastAPI',
+        description: 'Low-code/no-code enterprise multi-agent platform supporting 500K+ agent executions per month.',
+      },
+      {
+        name: 'LLM Agent for Sc-RNA Data Analysis',
+        stack: 'LangChain · Scanpy · Anndata · LangSmith',
+        description: 'Conversational agent letting biologists run scRNA-seq analyses in natural language, with live data-source integration.',
+      },
+      {
+        name: 'Odia OCR Benchmark',
+        stack: 'Qwen2.5-VL · LoRA · Hugging Face',
+        description: 'One of the first open Odia OCR benchmark datasets, with a fine-tuned model and Indic-aware evaluation metrics.',
+      },
+    ],
+    education: 'M.Sc. in Physics, NIT Srinagar (2017–2019) — CGPA 9.2, Gold Medalist; PG Diploma in Data Science, AlmaBetter (2022–2023)',
+    recognition: [
+      'GEM Award 2025, Blue Yonder',
+      'AIR 1388, GATE-DA 2025',
+      'Top 2% finish, ML Hackathon, Aug 2022',
+      'Gold Medalist, M.Sc. Physics, NIT Srinagar',
+    ],
+    links: {
+      email: 'ifteshanajnin786@gmail.com',
+      resume: '/resumes/iftesha-najnin-resume.pdf',
+    },
+  },
 ]

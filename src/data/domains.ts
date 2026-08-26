@@ -46,6 +46,11 @@ export const domains: Domain[] = [
     tags: ['Aspose', 'Prompt Engineering', 'OCR'],
   },
   {
+    title: 'Computational Biology & Life Sciences',
+    description: 'LLM agents and fine-tuned foundation models for genomics and biotech — from conversational scRNA-seq analysis to gene-level prediction.',
+    tags: ['GeneFormer', 'scRNA-seq', 'LangChain'],
+  },
+  {
     title: 'Computer Vision',
     description: 'Vision pipelines for classification and detection, from medical imaging to agriculture, using transfer learning.',
     tags: ['OpenCV', 'CNN', 'PyTorch'],
