@@ -5,3 +5,6 @@ dist-ssr
 *.tsbuildinfo
 .DS_Store
 resume/
+
+# Local Netlify folder
+.netlify
