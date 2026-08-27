@@ -1,9 +1,12 @@
 import { useState } from 'react'
-import { motion } from 'framer-motion'
 import Reveal from './Reveal'
+import GlassRing from './GlassRing'
 import { developers } from '../data/developers'
 
 const primaryEmail = developers[0]?.links.email ?? ''
+
+const field =
+  'w-full rounded-2xl border border-white/12 bg-white/[0.04] px-4 py-3.5 text-sm text-white outline-none transition-colors placeholder:text-white/30 focus:border-flame'
 
 export default function ContactSection() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
@@ -16,27 +19,52 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact" className="relative py-28">
-      <div className="mx-auto max-w-4xl px-6">
-        <Reveal>
-          <div className="relative overflow-hidden rounded-[2rem] glass p-8 sm:p-14">
-            <div className="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-gradient-to-br from-violet-500/30 via-cyan-500/20 to-magenta-500/20 blur-3xl" />
+    <section id="contact" className="relative overflow-hidden bg-ink-950 py-28">
+      <GlassRing
+        size={420}
+        thickness={58}
+        tiltX={66}
+        tiltZ={22}
+        duration={34}
+        className="-left-32 top-24 hidden opacity-70 lg:block"
+      />
+      <div className="pointer-events-none absolute inset-0 bg-grid-dark bg-grid opacity-50 [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,black,transparent)]" />
 
-            <span className="text-xs font-mono uppercase tracking-[0.2em] text-cyan-400">Let's talk</span>
-            <h2 className="relative mt-3 text-3xl sm:text-4xl font-semibold tracking-tight max-w-lg">
-              Have a project in mind? <span className="text-gradient">Tell us about it.</span>
+      <div className="relative mx-auto grid max-w-6xl gap-14 px-6 lg:grid-cols-2 lg:items-start lg:gap-20">
+        <Reveal>
+          <div>
+            <span className="eyebrow text-flame">Let&apos;s talk</span>
+            <h2 className="headline mt-4 text-[clamp(2.25rem,5.5vw,4rem)] text-white">
+              Have a project in mind? Tell us about it.
             </h2>
-            <p className="relative mt-4 max-w-md text-white/60">
-              Share a few details and the right engineer from the collective will get back to you within a day.
+            <p className="mt-6 max-w-md text-lg leading-relaxed text-white/55">
+              Share a few details and the right engineer from the collective gets back to you within
+              a day.
             </p>
 
-            <form onSubmit={handleSubmit} className="relative mt-10 grid gap-4 sm:grid-cols-2">
+            {primaryEmail && (
+              <a
+                href={`mailto:${primaryEmail}`}
+                className="mt-10 inline-flex items-center gap-3 border-b border-white/20 pb-1 font-mono text-sm text-white/70 transition-colors hover:border-flame hover:text-white"
+              >
+                {primaryEmail}
+              </a>
+            )}
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.1}>
+          <form
+            onSubmit={handleSubmit}
+            className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-6 sm:p-8"
+          >
+            <div className="grid gap-3">
               <input
                 required
                 placeholder="Your name"
                 value={form.name}
                 onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
-                className="rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm outline-none placeholder:text-white/30 focus:border-cyan-400/50 transition-colors"
+                className={field}
               />
               <input
                 required
@@ -44,27 +72,39 @@ export default function ContactSection() {
                 placeholder="Your email"
                 value={form.email}
                 onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
-                className="rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm outline-none placeholder:text-white/30 focus:border-cyan-400/50 transition-colors"
+                className={field}
               />
               <textarea
                 required
+                rows={5}
                 placeholder="What are you looking to build?"
-                rows={4}
                 value={form.message}
                 onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
-                className="sm:col-span-2 rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm outline-none placeholder:text-white/30 focus:border-cyan-400/50 transition-colors resize-none"
+                className={`${field} resize-none`}
               />
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+              <button
                 type="submit"
-                className="sm:col-span-2 relative overflow-hidden rounded-xl px-6 py-3.5 font-medium text-ink-900"
+                className="group mt-2 flex items-center justify-between rounded-full bg-flame py-1.5 pl-6 pr-1.5 text-[15px] font-medium text-white transition-colors hover:bg-[#ff7a52]"
               >
-                <span className="absolute inset-0 bg-gradient-to-r from-violet-400 via-cyan-400 to-magenta-400 bg-[length:200%_auto] animate-gradient-x" />
-                <span className="relative">Send message</span>
-              </motion.button>
-            </form>
-          </div>
+                Send message
+                <span className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-full bg-white text-flame">
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                    fill="none"
+                  >
+                    <path
+                      d="M5 12h13M12 5.5 18.5 12 12 18.5"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </div>
+          </form>
         </Reveal>
       </div>
     </section>

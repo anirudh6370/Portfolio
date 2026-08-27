@@ -9,25 +9,37 @@ export default function TeamSection() {
   const [active, setActive] = useState<Developer | null>(null)
 
   return (
-    <section id="team" className="relative py-28">
-      <div className="mx-auto max-w-6xl px-6">
+    <section id="team" className="relative overflow-hidden bg-paper-300 py-28 text-ink-950">
+      <div className="pointer-events-none absolute inset-0 bg-grid-light bg-grid opacity-40 [mask-image:radial-gradient(ellipse_60%_50%_at_50%_100%,black,transparent)]" />
+
+      <div className="relative mx-auto max-w-6xl px-6">
         <SectionHeading
-          eyebrow="The Collective"
-          title="Independent engineers, working as one team."
+          tone="light"
+          eyebrow="The collective"
+          title={
+            <>
+              Independent engineers, <br className="hidden sm:block" />
+              working as one team.
+            </>
+          }
           description="Each of us takes freelance work individually — together we cover more ground than any single generalist."
         />
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {developers.map((dev, i) => (
-            <Reveal key={dev.id} delay={i * 0.08} className="h-full">
-              <DeveloperCard dev={dev} onOpen={() => setActive(dev)} />
+            <Reveal key={dev.id} delay={(i % 3) * 0.08} className="h-full">
+              <DeveloperCard dev={dev} index={i} onOpen={() => setActive(dev)} />
             </Reveal>
           ))}
 
-          <Reveal delay={developers.length * 0.08} className="h-full">
-            <div className="flex h-full min-h-[280px] flex-col items-center justify-center rounded-3xl border border-dashed border-white/15 p-7 text-center text-white/40">
-              <span className="font-display text-2xl">+</span>
-              <p className="mt-2 text-sm">More engineers joining the collective soon</p>
+          <Reveal delay={0.24} className="h-full">
+            <div className="flex h-full min-h-[300px] flex-col items-center justify-center rounded-[2rem] border border-dashed border-black/15 p-7 text-center">
+              <span className="flex h-11 w-11 items-center justify-center rounded-full border border-dashed border-black/20 font-display text-xl text-ink-700/50">
+                +
+              </span>
+              <p className="mt-4 max-w-[22ch] text-sm text-ink-700/55">
+                More engineers joining the collective soon
+              </p>
             </div>
           </Reveal>
         </div>

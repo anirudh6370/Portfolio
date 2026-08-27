@@ -1,19 +1,34 @@
+import type { ReactNode } from 'react'
 import Reveal from './Reveal'
 
 export default function SectionHeading({
   eyebrow,
   title,
   description,
+  tone = 'dark',
+  className = '',
 }: {
   eyebrow: string
-  title: string
+  title: ReactNode
   description?: string
+  /** `dark` = white type on ink, `light` = ink type on paper. */
+  tone?: 'dark' | 'light'
+  className?: string
 }) {
+  const dark = tone === 'dark'
   return (
-    <Reveal className="max-w-2xl mb-14">
-      <span className="text-xs font-mono uppercase tracking-[0.2em] text-cyan-400">{eyebrow}</span>
-      <h2 className="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight">{title}</h2>
-      {description && <p className="mt-4 text-white/60 text-lg">{description}</p>}
+    <Reveal className={`mb-16 max-w-3xl ${className}`}>
+      <span className="eyebrow text-flame">{eyebrow}</span>
+      <h2
+        className={`headline mt-4 text-[clamp(2rem,5vw,3.5rem)] ${dark ? 'text-white' : 'text-ink-950'}`}
+      >
+        {title}
+      </h2>
+      {description && (
+        <p className={`mt-6 text-lg leading-relaxed ${dark ? 'text-white/55' : 'text-ink-700/75'}`}>
+          {description}
+        </p>
+      )}
     </Reveal>
   )
 }

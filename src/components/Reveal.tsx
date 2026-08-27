@@ -1,16 +1,20 @@
 import { motion } from 'framer-motion'
-import type { ReactNode } from 'react'
+import type { PointerEvent, ReactNode } from 'react'
 
 export default function Reveal({
   children,
   delay = 0,
   className = '',
   y = 24,
+  onPointerEnter,
+  onPointerLeave,
 }: {
   children: ReactNode
   delay?: number
   className?: string
   y?: number
+  onPointerEnter?: (e: PointerEvent<HTMLDivElement>) => void
+  onPointerLeave?: (e: PointerEvent<HTMLDivElement>) => void
 }) {
   return (
     <motion.div
@@ -19,6 +23,8 @@ export default function Reveal({
       viewport={{ once: true, margin: '-80px' }}
       transition={{ duration: 0.6, delay, ease: 'easeOut' }}
       className={className}
+      onPointerEnter={onPointerEnter}
+      onPointerLeave={onPointerLeave}
     >
       {children}
     </motion.div>

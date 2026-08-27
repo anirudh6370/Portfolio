@@ -3,56 +3,87 @@
 @tailwind utilities;
 
 @layer base {
-  * {
-    @apply border-white/10;
-  }
   html {
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-ink-900 text-white/90 font-body antialiased;
-    background-image: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(124, 58, 237, 0.15), transparent);
+    @apply bg-ink-950 text-white font-body antialiased;
   }
-  h1, h2, h3, h4 {
-    @apply font-display;
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display font-semibold;
   }
   ::selection {
-    @apply bg-violet-500/40 text-white;
+    @apply bg-flame text-white;
   }
 }
 
 @layer utilities {
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-violet-400 via-cyan-400 to-magenta-400;
+  /* Display headline: rounded geometric, set tight and large — the single
+     strongest brand signal on the page. */
+  .headline {
+    @apply font-display font-semibold tracking-tightest leading-[0.95];
   }
-  .text-gradient-animated {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-violet-400 via-cyan-400 to-magenta-400 bg-[length:200%_auto] animate-gradient-x;
+  .eyebrow {
+    @apply font-mono text-[11px] uppercase tracking-[0.22em];
   }
-  /* Solid translucent surface — no backdrop-filter, cheap to composite.
-     Used for the many cards on the page; backdrop-blur is reserved for
-     the navbar and modal overlay where only one instance is ever active,
-     since backdrop-filter forces a re-sample of everything behind it on
-     every scroll/animation frame and was the main cause of scroll jank
-     when applied to a dozen cards at once. */
-  .glass {
-    @apply bg-ink-850/70 border border-white/10;
+
+  /* Surfaces. Deliberately no backdrop-filter: dozens of these are on the
+     page at once, and backdrop-filter forces the browser to re-sample
+     everything behind each one on every scroll frame. The frosted look
+     comes from a translucent fill plus a colour blob underneath instead,
+     which is paint-once. backdrop-blur is reserved for the navbar and the
+     modal overlay, where only one instance is ever live. */
+  .surface-dark {
+    @apply bg-white/[0.04] border border-white/10;
   }
-  .glass-blur {
-    @apply bg-white/[0.03] backdrop-blur-xl border border-white/10;
+  .surface-dark-hover {
+    @apply transition-colors duration-300 hover:bg-white/[0.07] hover:border-white/20;
   }
-  .glass-hover {
-    @apply hover:bg-white/[0.06] hover:border-white/20 transition-colors duration-300;
+  .surface-light {
+    @apply bg-white/70 border border-black/[0.07];
   }
+  .surface-light-hover {
+    @apply transition-colors duration-300 hover:bg-white hover:border-black/15;
+  }
+
   .noise::before {
     content: '';
     position: absolute;
     inset: 0;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
-    opacity: 0.025;
+    opacity: 0.03;
     pointer-events: none;
   }
+
   .scrollbar-none::-webkit-scrollbar {
     display: none;
+  }
+
+  /* Edge fade for marquee strips — colour is supplied per-instance. */
+  .fade-x {
+    mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+  }
+  .fade-y {
+    mask-image: linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent);
+  }
+}
+
+/* Deliberately does NOT flatten keyframe animations. The drifting columns,
+   marquees and the work deck are load-bearing parts of the design, and a
+   blanket `animation-duration: 0.01ms !important` here silently froze all
+   of them — including the deck, whose advance was riding an animation
+   event. Transitions and scroll-jumping still get toned down. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
@@ -60,9 +91,12 @@
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0a0f;
+  background: #08080a;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #7c3aed, #06b6d4);
+  background: #ff6434;
   border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4f49f5;
 }

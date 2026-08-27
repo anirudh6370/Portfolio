@@ -1,71 +1,76 @@
-import { useRef } from 'react'
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import type { Developer } from '../data/developers'
+
+/** Palette rotation so the team grid reads as a set of colour-coded cards. */
+export const accents = [
+  { chip: 'bg-flame text-white', text: 'text-flame', blob: 'rgba(255,100,52,0.35)' },
+  { chip: 'bg-electric text-white', text: 'text-electric', blob: 'rgba(79,73,245,0.32)' },
+  { chip: 'bg-royal text-white', text: 'text-royal', blob: 'rgba(65,23,180,0.28)' },
+  { chip: 'bg-sand text-ink-950', text: 'text-ink-700', blob: 'rgba(248,215,177,0.6)' },
+  { chip: 'bg-lilac text-ink-950', text: 'text-royal', blob: 'rgba(185,182,251,0.5)' },
+]
 
 export default function DeveloperCard({
   dev,
+  index,
   onOpen,
 }: {
   dev: Developer
+  index: number
   onOpen: () => void
 }) {
-  const ref = useRef<HTMLButtonElement>(null)
-  const x = useMotionValue(0)
-  const y = useMotionValue(0)
-
-  const rotateX = useSpring(useTransform(y, [-0.5, 0.5], [8, -8]), { stiffness: 200, damping: 20 })
-  const rotateY = useSpring(useTransform(x, [-0.5, 0.5], [-8, 8]), { stiffness: 200, damping: 20 })
-
-  function handleMouseMove(e: React.MouseEvent<HTMLButtonElement>) {
-    const rect = ref.current?.getBoundingClientRect()
-    if (!rect) return
-    x.set((e.clientX - rect.left) / rect.width - 0.5)
-    y.set((e.clientY - rect.top) / rect.height - 0.5)
-  }
-
-  function handleLeave() {
-    x.set(0)
-    y.set(0)
-  }
+  const accent = accents[index % accents.length]
 
   return (
-    <motion.button
-      ref={ref}
+    <button
       onClick={onOpen}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleLeave}
-      style={{ rotateX, rotateY, transformPerspective: 800 }}
-      className="group relative flex h-full w-full flex-col text-left rounded-3xl glass glass-hover p-7 overflow-hidden"
+      className="group relative flex h-full w-full flex-col overflow-hidden rounded-[2rem] border border-black/[0.07] bg-white/70 p-7 text-left transition-all duration-300 hover:-translate-y-1 hover:border-black/15 hover:bg-white"
     >
-      <div className="absolute -top-16 -right-16 h-40 w-40 rounded-full bg-gradient-to-br from-violet-500/30 to-cyan-500/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div
+        className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+        style={{ backgroundImage: `radial-gradient(closest-side, ${accent.blob}, transparent 72%)` }}
+      />
 
       <div className="relative flex items-start justify-between">
-        <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-500 via-cyan-500 to-magenta-500 font-display text-lg font-semibold text-ink-900">
+        <span
+          className={`flex h-14 w-14 items-center justify-center rounded-2xl font-display text-lg font-bold ${accent.chip}`}
+        >
           {dev.avatarInitials}
-        </div>
-        <span className="rounded-full border border-white/15 px-3 py-1 text-xs text-white/50">
+        </span>
+        <span className="rounded-full border border-black/10 px-3 py-1 font-mono text-[11px] text-ink-700/60">
           {dev.yearsExperience}+ yrs
         </span>
       </div>
 
-      <h3 className="relative mt-6 font-display text-xl font-semibold">{dev.name}</h3>
-      <p className="relative text-sm text-cyan-400">{dev.role}</p>
-      <p className="relative mt-3 text-sm text-white/60 leading-relaxed line-clamp-3">{dev.tagline}</p>
+      <h3 className="relative mt-7 font-display text-xl font-bold tracking-tight text-ink-950">
+        {dev.name}
+      </h3>
+      <p className={`relative mt-0.5 text-sm font-medium ${accent.text}`}>{dev.role}</p>
+      <p className="relative mt-3 line-clamp-3 text-sm leading-relaxed text-ink-700/70">
+        {dev.tagline}
+      </p>
 
       <div className="relative mt-5 flex flex-wrap gap-2">
         {dev.topSkills.slice(0, 4).map((s) => (
-          <span key={s} className="rounded-full bg-white/5 px-2.5 py-1 text-xs text-white/60">
+          <span key={s} className="rounded-full bg-black/[0.05] px-2.5 py-1 font-mono text-[11px] text-ink-700/70">
             {s}
           </span>
         ))}
       </div>
 
-      <div className="relative mt-auto flex items-center gap-1.5 pt-6 text-sm font-medium text-white/80">
+      <div className="relative mt-auto flex items-center gap-3 pt-8 text-sm font-medium text-ink-950">
         View profile
-        <svg viewBox="0 0 24 24" className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none">
-          <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
+        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-ink-950 text-white transition-transform duration-300 group-hover:translate-x-1">
+          <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none">
+            <path
+              d="M5 12h13M12 5.5 18.5 12 12 18.5"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </span>
       </div>
-    </motion.button>
+    </button>
   )
 }

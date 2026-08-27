@@ -65,12 +65,17 @@ function Row({ reverse = false }: { reverse?: boolean }) {
   return (
     <div className="flex w-max">
       <div
-        className={`flex shrink-0 items-center gap-10 pr-10 will-change-transform ${reverse ? 'animate-marquee-reverse' : 'animate-marquee'}`}
+        className={`flex shrink-0 items-center gap-3 pr-3 will-change-transform ${
+          reverse ? 'animate-marquee-reverse' : 'animate-marquee-fast'
+        }`}
       >
         {[...stack, ...stack].map((s, i) => (
-          <div key={s.name + i} className="flex items-center gap-2.5 text-white/40 hover:text-white/80 transition-colors">
-            <s.Icon className="h-5 w-5" />
-            <span className="whitespace-nowrap text-sm font-mono">{s.name}</span>
+          <div
+            key={s.name + i}
+            className="flex items-center gap-2.5 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-white/45 transition-colors hover:border-white/25 hover:text-white"
+          >
+            <s.Icon className="h-4 w-4" />
+            <span className="whitespace-nowrap font-mono text-xs">{s.name}</span>
           </div>
         ))}
       </div>
@@ -80,10 +85,11 @@ function Row({ reverse = false }: { reverse?: boolean }) {
 
 export default function TechMarquee() {
   return (
-    <section className="relative py-16 border-y border-white/10 overflow-hidden">
-      <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-ink-900 to-transparent z-10" />
-      <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-ink-900 to-transparent z-10" />
-      <div className="space-y-6">
+    <section className="relative overflow-hidden bg-ink-950 pb-24">
+      <div className="mx-auto mb-8 max-w-6xl px-6">
+        <span className="eyebrow text-white/35">The stack we reach for</span>
+      </div>
+      <div className="fade-x space-y-3">
         <Row />
         <Row reverse />
       </div>
