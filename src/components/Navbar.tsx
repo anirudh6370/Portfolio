@@ -5,6 +5,7 @@ import Mark from './Mark'
 const links = [
   { label: 'Approach', href: '#approach' },
   { label: 'Expertise', href: '#expertise' },
+  { label: 'Industries', href: '#industries' },
   { label: 'Team', href: '#team' },
   { label: 'Work', href: '#work' },
 ]

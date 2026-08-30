@@ -4,6 +4,7 @@ import ProcessMarquee from './components/ProcessMarquee'
 import ApproachSection from './components/ApproachSection'
 import DomainsSection from './components/DomainsSection'
 import TechMarquee from './components/TechMarquee'
+import IndustriesSection from './components/IndustriesSection'
 import TeamSection from './components/TeamSection'
 import ProjectsSection from './components/ProjectsSection'
 import WhyUsSection from './components/WhyUsSection'
@@ -20,6 +21,7 @@ export default function App() {
         <ApproachSection />
         <DomainsSection />
         <TechMarquee />
+        <IndustriesSection />
         <TeamSection />
         <ProjectsSection />
         <WhyUsSection />

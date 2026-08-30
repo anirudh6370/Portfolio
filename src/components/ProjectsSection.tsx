@@ -60,7 +60,8 @@ export default function ProjectsSection() {
       developers.flatMap((dev) =>
         dev.projects.map((p) => ({
           ...p,
-          author: dev.name,
+          // Initials only — the team is presented anonymously site-wide.
+          author: dev.avatarInitials,
           tabs: p.stack.split('·').map((s) => s.trim()),
         }))
       ),

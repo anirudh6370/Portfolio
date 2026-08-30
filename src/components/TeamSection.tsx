@@ -1,13 +1,9 @@
-import { useState } from 'react'
-import { developers, type Developer } from '../data/developers'
+import { developers } from '../data/developers'
 import DeveloperCard from './DeveloperCard'
-import DeveloperModal from './DeveloperModal'
 import SectionHeading from './SectionHeading'
 import Reveal from './Reveal'
 
 export default function TeamSection() {
-  const [active, setActive] = useState<Developer | null>(null)
-
   return (
     <section id="team" className="relative overflow-hidden bg-paper-300 py-28 text-ink-950">
       <div className="pointer-events-none absolute inset-0 bg-grid-light bg-grid opacity-40 [mask-image:radial-gradient(ellipse_60%_50%_at_50%_100%,black,transparent)]" />
@@ -22,13 +18,13 @@ export default function TeamSection() {
               working as one team.
             </>
           }
-          description="Each of us takes freelance work individually — together we cover more ground than any single generalist."
+          description="Each of us takes freelance work individually — together we cover more ground than any single generalist. You meet the engineer on your project once we scope it."
         />
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {developers.map((dev, i) => (
             <Reveal key={dev.id} delay={(i % 3) * 0.08} className="h-full">
-              <DeveloperCard dev={dev} index={i} onOpen={() => setActive(dev)} />
+              <DeveloperCard dev={dev} index={i} />
             </Reveal>
           ))}
 
@@ -44,8 +40,6 @@ export default function TeamSection() {
           </Reveal>
         </div>
       </div>
-
-      <DeveloperModal dev={active} onClose={() => setActive(null)} />
     </section>
   )
 }
